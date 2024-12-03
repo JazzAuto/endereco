@@ -8,8 +8,10 @@ const testeapi = () => {
 
   const { register, setValue } = useForm();
 
-  function buscarCep(event) {
+  function buscarCep(event: { target: { value: any; }; }) {
     const buscarCEP = event.target.value
+
+    console.log(buscarCEP)
 
     if (buscarCEP.length == 8) {
 
@@ -50,29 +52,29 @@ const testeapi = () => {
               <Form.Control type="text" {...register("buscarsCEP")} onChange={buscarCep} />
             </Form.Group>
 
-            <Form.Group className="mb-3 m-2" controlId="tempoativacao">
+            <Form.Group className="mb-3 m-2" controlId="unidade">
               <Form.Label>unidade:</Form.Label>
-              <Form.Control type="text" {...register("tempoativacao")} />
+              <Form.Control type="text" {...register("unidade")} onChange={buscarCep}/>
             </Form.Group>
 
-            <Form.Group className="mb-3 m-2" controlId="espacolivrec">
+            <Form.Group className="mb-3 m-2" controlId="estado">
               <Form.Label>estado:</Form.Label>
-              <Form.Control type="text" {...register("espacolivrec")} />
+              <Form.Control type="text" {...register("estado")} onChange={buscarCep}/>
             </Form.Group>
 
-            <Form.Group className="mb-3 m-2" controlId="espacolivred">
+            <Form.Group className="mb-3 m-2" controlId="localidade">
               <Form.Label>localidade:</Form.Label>
-              <Form.Control type="text" {...register("espacolivred")} />
+              <Form.Control type="text" {...register("localidade")} onChange={buscarCep}/>
             </Form.Group>
 
-            <Form.Group className="mb-3 m-2" controlId="cargacpu">
+            <Form.Group className="mb-3 m-2" controlId="região">
               <Form.Label>região:</Form.Label>
-              <Form.Control type="text" {...register("cargacpu")} />
+              <Form.Control type="text" {...register("região")} onChange={buscarCep}/>
             </Form.Group>
 
-            <Form.Group className="mb-3 m-2" controlId="memoriafisica">
+            <Form.Group className="mb-3 m-2" controlId="logradouro">
               <Form.Label>logradouro:</Form.Label>
-              <Form.Control type="text" {...register("memoriafisica")} />
+              <Form.Control type="text" {...register("logradouro")} onChange={buscarCep}/>
             </Form.Group>
 
           </Form>
